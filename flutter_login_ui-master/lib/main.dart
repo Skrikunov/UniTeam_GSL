@@ -6,6 +6,7 @@ import 'Screens/profile.dart';
 import 'Screens/login.dart';
 import 'Screens/register.dart';
 import 'Screens/loading.dart';
+import 'Screens/gamescreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -31,7 +32,13 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.cyan,
         // fontFamily: 'Montserrat',
       ),
+      // JUST UNCOMMENT TEAMMANAGER AND COMMENT LOADING PAGE
+      // FOR FAST TESTING
       home: MyLoadingPage(title: 'UniTeam Login'),
+      // home: MyTeamManager(title: 'UniTeam Login'),
     );
   }
 }
+
+
+

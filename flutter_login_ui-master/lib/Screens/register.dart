@@ -90,7 +90,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
         appBar: AppBar(
-
           title: Text('Back'),
           actions: <Widget>[
             IconButton(
@@ -118,15 +117,12 @@ class _MyHomePageState extends State<MyHomePage> {
               onChanged: (String newValue) {
                 setState(() {
                   // dropdownvalue = newValue;
-                  if (1 > 2){
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => MyLoadingPage()),
-                    );
-                  }
-                  else{
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MyLoadingPage()),
+                  );
 
-                  }
+
                   // Navigator.push(
                   //   context,
                   //   MaterialPageRoute(builder: (context) => MyLoadingPage()),
