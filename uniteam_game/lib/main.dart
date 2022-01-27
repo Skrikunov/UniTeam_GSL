@@ -1,37 +1,45 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:uniteam_game/screens/waiting.dart';
+import 'firebase/game.dart';
 import 'screens/description.dart';
+import 'screens/gamescreen.dart';
 import 'screens/profile.dart';
-import 'screens/login.dart';
-import 'screens/register.dart';
-import 'screens/loading.dart';
+import 'firebase/auth.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        // you must first provider the object that will be passed to the proxy
+        ChangeNotifierProvider<ApplicationState>(
+            create: (_) => ApplicationState()),
+        ChangeNotifierProvider<PlayerState>(create: (_) => PlayerState()),
+      ],
+      child: const App(),
+    ),
+  );
 }
 
-class MyApp extends StatelessWidget {
+class App extends StatelessWidget {
+  const App({Key? key}) : super(key: key);
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'UniTeam: Login',
+      title: 'UniTeam',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
         primarySwatch: Colors.cyan,
-        // fontFamily: 'Montserrat',
       ),
-      home: LoadingScreen(title: 'UniTeam Login'),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => ProfileScreen(),
+        '/game': (context) => const DragGame(),
+      },
     );
   }
 }

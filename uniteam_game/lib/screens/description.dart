@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'winner.dart';
+import 'package:uniteam_game/screens/gamescreen.dart';
 
 class DescriptionScreen extends StatefulWidget {
-  DescriptionScreen({Key? key, this.title = "Description"}) : super(key: key);
+  const DescriptionScreen({Key? key, this.title = "Description"})
+      : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -20,7 +21,7 @@ class DescriptionScreen extends StatefulWidget {
 }
 
 class _DescriptionScreenState extends State<DescriptionScreen> {
-  TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
+  TextStyle style = const TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
 
   @override
   Widget build(BuildContext context) {
@@ -34,14 +35,14 @@ class _DescriptionScreenState extends State<DescriptionScreen> {
     final startButon = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(30.0),
-      color: Color.fromRGBO(71, 195, 203, 1),
+      color: const Color.fromRGBO(71, 195, 203, 1),
       child: MaterialButton(
         minWidth: MediaQuery.of(context).size.width,
-        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+        padding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => WinScreen()),
+            MaterialPageRoute(builder: (context) => const DragGame()),
           );
         },
         child: Text("Start game!",
@@ -53,10 +54,10 @@ class _DescriptionScreenState extends State<DescriptionScreen> {
 
     return Scaffold(
         appBar: AppBar(
-          title: Text('Back'),
+          title: const Text('Back'),
           actions: <Widget>[
             IconButton(
-              icon: Icon(
+              icon: const Icon(
                 Icons.settings,
                 color: Colors.white,
               ),
@@ -65,7 +66,7 @@ class _DescriptionScreenState extends State<DescriptionScreen> {
               },
             ),
             IconButton(
-              icon: Icon(
+              icon: const Icon(
                 Icons.menu,
                 color: Colors.white,
               ),
@@ -85,9 +86,9 @@ class _DescriptionScreenState extends State<DescriptionScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    SizedBox(height: 10.0),
+                    const SizedBox(height: 10.0),
                     const Text('WHATS HAPPENING?',
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 24,
                           fontStyle: FontStyle.normal,
@@ -95,11 +96,11 @@ class _DescriptionScreenState extends State<DescriptionScreen> {
                         )
                         // style: Theme.of(context).textTheme.headline4,
                         ),
-                    SizedBox(height: 20.0),
+                    const SizedBox(height: 20.0),
                     const Text(
                         'The crew of your spaceship crashed on the planet Nibiru. All people scattered across the planet. You survived and even found a part of the rocket, but you dont know which part of the body to attach it to. Use the help of friends: put together a rocket and save your life! BE CAREFUL: Oxygen is running out! Time has gone...',
                         textAlign: TextAlign.justify,
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontWeight: FontWeight.normal,
                           fontSize: 20,
                           fontStyle: FontStyle.normal,
@@ -107,7 +108,7 @@ class _DescriptionScreenState extends State<DescriptionScreen> {
                         )
                         // style: Theme.of(context).textTheme.headline4,
                         ),
-                    SizedBox(height: 50.0),
+                    const SizedBox(height: 50.0),
                     SizedBox(
                       height: 300.0,
                       child: Image.asset(
@@ -115,11 +116,11 @@ class _DescriptionScreenState extends State<DescriptionScreen> {
                         fit: BoxFit.contain,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 50.0,
                     ),
                     startButon,
-                    SizedBox(
+                    const SizedBox(
                       height: 15.0,
                     ),
                   ],
