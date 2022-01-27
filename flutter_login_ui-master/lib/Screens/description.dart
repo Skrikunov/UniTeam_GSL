@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login_ui/Screens/winner.dart';
+import 'gamescreen.dart';
 
 class MyHomePage3 extends StatefulWidget {
   MyHomePage3({Key key, this.title}) : super(key: key);
@@ -41,7 +42,7 @@ class _MyHomePageState3 extends State<MyHomePage3> {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => MyWinPage()),
+            MaterialPageRoute(builder: (context) => MyTeamManager()),
           );
         },
         child: Text("Start game!",
